@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "ajv": "^8.17.1",
     "axios": "^1.10.0",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
+    "swiper": "^11.2.9",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuetify": "^3.0.0-beta.0",
@@ -42,7 +44,18 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@babel/eslint-parser",
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "extraFileExtensions": [
+        ".vue"
+      ]
+    },
+    "globals": {
+      "defineEmits": "readonly",
+      "defineProps": "readonly",
+      "defineExpose": "readonly",
+      "withDefaults": "readonly"
     },
     "rules": {}
   },

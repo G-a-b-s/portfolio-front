@@ -1,66 +1,30 @@
 <template>
-  <div class="text-center mt-4">
-    <h2>experience</h2>
-    <div style="width: 120px; margin: 0 auto" />
-  </div>
-  <v-col
-    id="experience"
-    cols="12"
-    class="padd"
-  >
-    <div
-      id="project"
-      class="first"
-    >
-      <v-row>
-        <v-col cols="12">
-          <div class="child-experience">
-            <v-btn
-              icon="fas fa-laptop"
-              color="#FBDF7E"
-              class="text-white"
-            />
-            <h3 class="ml-3 mt-4">
-              Web Design
-            </h3>
-            <p class="text-grey ml-3 mt-4 text-caption">
-              Lorem, ipsum dolor sit amet <br>consectetur adipisicing
-              <br>consectetur adipis
-            </p>
-          </div>
-          <div class="child-experience">
-            <v-btn
-              icon="fas fa-mobile-alt"
-              color="#FBDF7E"
-              class="text-white"
-            />
-            <h3 class="ml-3 mt-4">
-              App Design
-            </h3>
-            <p class="text-grey ml-3 mt-4 text-caption">
-              Lorem, ipsum dolor sit amet <br>consectetur adipisicing
-              <br>consectetur adipis
-            </p>
-          </div>
-          <div class="child-experience">
-            <v-btn
-              icon="fas fa-camera"
-              color="#FBDF7E"
-              class="text-white"
-            />
-            <h3 class="ml-3 mt-4">
-              Photography
-            </h3>
-            <p class="text-grey ml-3 mt-4 text-caption">
-              Lorem, ipsum dolor sit amet <br>consectetur adipisicing
-              <br>consectetur adipis
-            </p>
-          </div>
-        </v-col>
-      </v-row>
-      <v-divider />
+  <v-container>
+    <div class="text-center mt-4">
+      <h2>Experiências</h2>
+      <div style="width: 120px; margin: 0 auto; border-bottom: 3px solid #6f42c1;"></div>
     </div>
-  </v-col>
+
+    <div class="timeline mt-6">
+      <div v-for="exp in experiences" :key="exp.id" class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>{{ exp.position }} - {{ exp.company }}</h3>
+          <small class="text-grey">{{ exp.duration }}</small>
+          <p class="mt-2">{{ exp.description }}</p>
+        </div>
+      </div>
+    </div>
+  </v-container>
 </template>
 <script setup>
+import { ref, onMounted } from 'vue';
+import api from '@/services/api';
+
+const experiences = ref([]);
+
+onMounted(async () => {
+  experiences.value = await api.getExperiences();
+});
 </script>
+

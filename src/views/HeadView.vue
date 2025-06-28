@@ -6,17 +6,18 @@
           style="position: relative"
           class="mt-16"
         >
-          <h1 class="text-grey">
+          <h1 class="s-cpurple">
             Olá,
           </h1>
-          <h1 class="text-white">
+          <h1 style="color: #b3a1f7">
             Sou Gabriel Rocha
           </h1>
-          <span class="text-grey">Desenvolvedor</span><br>
+          <span class="s-cpurple">Desenvolvedor</span><br>
           <v-btn
             tile
             dark
-            class="text-purple mt-8"
+            class="mt-8"
+            style="border-color: #5a3ea0; color: #b3a1f7"
             variant="outlined"
             @click="handleContactClick"
           >
@@ -25,19 +26,7 @@
         </div>
       </v-col>
       <v-col cols="2">
-        <div
-          style="
-            position: absolute;
-            z-index: 9999;
-            bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            left: 0;
-            right: 0;
-            text-align: center;
-          "
-          class="mt-16"
-        >
+        <div class="angle-down mt-16">
           <v-icon @click="handleAboutClick">fas fa-angle-double-down</v-icon>
         </div>
       </v-col>

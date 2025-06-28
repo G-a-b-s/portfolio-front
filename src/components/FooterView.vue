@@ -4,9 +4,9 @@
       elevation="0"
       rounded="0"
       width="100%"
-      class="bg-grey text-center"
+      class="cFooter"
     >
-      <v-card-text class="text-white">
+      <v-card-text class="text-black">
         @ {{ new Date().getFullYear() }} —
         <strong>Gabriel Rocha</strong>
       </v-card-text>
@@ -16,6 +16,8 @@
 
 <script>
 export default {
-
+  mounted() {
+    console.log("FooterView carregado");
+  }
 }
 </script>

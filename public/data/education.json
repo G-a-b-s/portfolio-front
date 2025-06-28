@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "course": "Sistemas de Informação",
+    "institution": "PUC Minas",
+    "status": "Em andamento",
+    "period": "6º período"
+  },
+  {
+    "id": 2,
+    "course": "Técnico em Informática",
+    "institution": "COTEMIG",
+    "status": "Concluído",
+    "period": "2014 - 2016"
+  }
+]

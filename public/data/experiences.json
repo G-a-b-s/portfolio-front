@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "position": "Desenvolvedor Analista Jr.",
+    "company": "Reply",
+    "duration": "1 ano e 9 meses",
+    "description": "Desenvolvimento e manutenção de software para terceiros usando .NET, Razor Pages, JavaScript, testes unitários e SQL Server. Atuação com metodologias Scrum e Kanban."
+  },
+  {
+    "id": 2,
+    "position": "Estágio Desenvolvedor .NET ",
+    "company": "Reply",
+    "duration": "1 ano e 5 meses",
+    "description": "Manutenção de aplicações web com .NET, Razor Pages, MVC, JavaScript e SQL Server."
+  }
+]

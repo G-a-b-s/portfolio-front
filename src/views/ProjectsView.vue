@@ -1,49 +1,85 @@
 <template>
-  <v-col cols="12" sm="12" id="projects">
-    <div class="text-center mt-4">
-      <h2>projects</h2>
-      <div style="width: 120px; margin: 0 auto">
-      </div>
-    </div>
-    <div class="d-flex justify-center mb-6">
-      <v-btn color="#FBDF7E" class="mr-2">All</v-btn>
-      <v-btn class="mr-2" variant="tonal">Web Design</v-btn>
-      <v-btn class="mr-2" variant="tonal">Front Design</v-btn>
-      <v-btn class="mr-2" variant="tonal"> Photography</v-btn>
-      <v-btn variant="tonal"> Illustration</v-btn>
-    </div>
-  </v-col>
-  <v-col cols="12" class="imgHover">
-    <v-row class="fill-height" align="center" justify="center">
-      <template v-for="(item, i) in items" :key="i">
-        <v-col cols="12" md="4">
-          <v-hover v-slot="{ isHovering, props }">
-            <v-card
-                :elevation="isHovering ? 12 : 2"
-                :class="{ 'on-hover': isHovering }"
-                v-bind="props"
+  <v-container id="projects" class="pb-12">
+    <h2 class="text-center mb-6">Projetos</h2>
+
+    <Swiper
+        :modules="[Navigation, Pagination, Autoplay]"
+        :slides-per-view="getSlidesPerView"
+        :space-between="16"
+        :loop="true"
+        :pagination="{ clickable: true }"
+        :navigation="true"
+        :autoplay="{
+        delay: 4000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false
+      }"
+        class="project-swiper"
+    >
+      <SwiperSlide
+          v-for="(repo, index) in pinned"
+          :key="index"
+          class="card-wrapper"
+      >
+        <v-card class="project-card" elevation="3">
+          <div class="project-title">
+            <div class="custom-project-title">{{ repo.name }}</div>
+          </div>
+
+          <v-card-text class="project-description">
+            {{ repo.description || 'Sem descrição disponível.' }}
+          </v-card-text>
+
+          <v-card-text class="project-language">
+            <strong>Linguagem:</strong>
+            {{ formatLanguages(repo.languages) || 'Não especificada' }}
+          </v-card-text>
+
+          <v-card-actions class="project-actions">
+            <v-btn
+                variant="outlined"
+                :href="repo.url"
+                target="_blank"
+                class="text-none project-btn"
             >
-              <v-img :src="item.img" height="225px" cover> </v-img>
-            </v-card>
-          </v-hover>
-        </v-col>
-      </template>
-    </v-row>
-  </v-col>
-  <v-col cols="12" sm="12">
-    <div class="d-flex justify-center mb-6">
-      <v-btn color="#FBDF7E" class="mt-4">Load More</v-btn>
+              Ver no GitHub
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </SwiperSlide>
+    </Swiper>
+
+    <div v-if="!pinned.length" class="text-center mt-4">
+      Carregando projetos...
     </div>
-  </v-col>
+  </v-container>
 </template>
+
 <script setup>
-import { ref } from "vue";
-const items = ref([
-  { img: "i3.jpg" },
-  { img: "i4.jpg" },
-  { img: "i5.jpg" },
-  { img: "i6.jpeg" },
-  { img: "i9.jpg" },
-  { img: "i8.jpg" },
-]);
+import { ref, onMounted, computed } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+import api from "@/services/api";
+
+const pinned = ref([]);
+
+onMounted(async () => {
+  pinned.value = await api.getPinnedRepos();
+});
+
+function formatLanguages(languages) {
+  return languages.nodes
+    .filter(lang => lang.name !== "Objective-C")
+    .map(lang => lang.name === "JavaScript" ? "JS" : lang.name)
+    .join(", ");
+}
+
+const getSlidesPerView = computed(() => {
+  const width = window.innerWidth;
+  if (width >= 1200) return 3;
+  if (width >= 768) return 2;
+  return 1;
+});
 </script>
+

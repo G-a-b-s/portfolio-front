@@ -1,55 +1,31 @@
 <template>
-  <v-col cols="12" id="education">
-    <div class="pre">
-      <v-row>
-        <v-col cols="12" sm="4">
-          <v-card class="mx-auto" max-width="344" height="">
-            <v-img src="i10.jpg" height="200px" cover></v-img>
-
-            <v-card-title> education </v-card-title>
-
-            <v-card-subtitle>
-              By AAE IdeaPro | 06 Sep 2022
-            </v-card-subtitle>
-            <v-card-text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-              rem saepe sapiente deleniti, odio non laborum fuga.
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" sm="4">
-          <v-card class="mx-auto" max-width="344" height="">
-            <v-img src="i11.jpg" height="200px" cover></v-img>
-
-            <v-card-title> We provide you the best </v-card-title>
-
-            <v-card-subtitle>
-              By AAE IdeaPro | 06 Sep 2022
-            </v-card-subtitle>
-            <v-card-text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-              rem saepe sapiente deleniti, odio non laborum fuga.
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="12" sm="4">
-          <v-card class="mx-auto" max-width="344" height="">
-            <v-img src="i12.jpg" height="200px" cover></v-img>
-
-            <v-card-title> We provide you the best </v-card-title>
-
-            <v-card-subtitle>
-              By AAE IdeaPro | 06 Sep 2022
-            </v-card-subtitle>
-            <v-card-text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-              rem saepe sapiente deleniti, odio non laborum fuga.
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
+  <v-container>
+    <div class="text-center mt-4">
+      <h2>Formação Acadêmica</h2>
+      <div style="width: 120px; margin: 0 auto; border-bottom: 3px solid #6f42c1;"></div>
     </div>
-  </v-col>
+
+    <div class="timeline mt-6">
+      <div v-for="edu in education" :key="edu.id" class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>{{ edu.course }}</h3>
+          <h4>{{edu.institution}}</h4>
+          <small class="text-grey">( {{ edu.period }} - {{edu.status}} )</small>
+          <p v-if="edu.descricao" class="mt-2">{{ edu.descricao }}</p>
+        </div>
+      </div>
+    </div>
+  </v-container>
 </template>
+
 <script setup>
+import { ref, onMounted } from 'vue';
+import api from '@/services/api';
+
+const education = ref([]);
+
+onMounted(async () => {
+  education.value = await api.getEducation();
+});
 </script>
