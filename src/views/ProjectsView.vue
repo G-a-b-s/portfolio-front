@@ -21,7 +21,7 @@
           :key="index"
           class="card-wrapper"
       >
-        <v-card class="project-card" elevation="3">
+        <v-card class="project-card bordered-card" elevation="3">
           <div class="project-title">
             <div class="custom-project-title">{{ repo.name }}</div>
           </div>
