@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nome": "EventSearch App",
+    "descricao": "App mobile para busca e cadastro de eventos usando Flutter, Firebase e Google API. Inclui autenticação via Firebase e busca por localização com Google Maps.",
+    "tecnologias": ["Flutter", "Firebase", "Google Maps API"]
+  },
+  {
+    "id": 2,
+    "nome": "TechBook",
+    "descricao": "Web app desenvolvido com JavaScript, HTML e Google Books API para busca de livros com interface responsiva.",
+    "tecnologias": ["JavaScript", "HTML", "Google Books API"]
+  },
+  {
+    "id": 3,
+    "nome": "Microsserviços E-commerce",
+    "descricao": "Sistema escalável de e-commerce com arquitetura de microsserviços usando Java, Spring Boot e Red Hat OpenShift via Bootcamp Java Cloud Native - Fundação Bradesco.",
+    "tecnologias": ["Java", "Spring Boot", "Red Hat OpenShift"]
+  }
+]
