@@ -5,7 +5,7 @@
         <v-col cols="12" md="5" class="text-center">
           <div class="profile-pic-wrapper">
             <v-avatar size="220" class="elevation-12">
-              <img src="/perfil.jpeg" alt="Gabriel Rocha" class="photoProfile" />
+              <img :src="baseUrl + 'perfil.jpeg'" alt="Gabriel Rocha" class="photoProfile" />
             </v-avatar>
             <div class="orbit-icon vueIcon">
               <img
@@ -79,6 +79,8 @@
 import {onMounted, ref} from "vue";
 import api from "@/services/api";
 
+const baseUrl = process.env.BASE_URL;
+
 const profile = ref([]);
 onMounted(async () => {
   profile.value = await api.getProfile();
@@ -86,7 +88,7 @@ onMounted(async () => {
 
 function downloadResume() {
   const link = document.createElement('a')
-  link.href = '/resume.pdf'
+  link.href = `${baseUrl}resume.pdf`;
   link.download = 'Gabriel_Rocha_CV.pdf'
   document.body.appendChild(link)
   link.click()
