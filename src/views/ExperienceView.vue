@@ -1,8 +1,7 @@
 <template>
   <v-container>
     <div class="text-center mt-4">
-      <h2>Experiências</h2>
-      <div style="width: 120px; margin: 0 auto; border-bottom: 3px solid #6f42c1;"></div>
+      <SectionTitle title="Experiências" />
     </div>
 
     <div class="timeline mt-6">
@@ -20,6 +19,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import api from '@/services/api';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 const experiences = ref([]);
 

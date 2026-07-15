@@ -1,6 +1,8 @@
 <template>
   <v-container id="projects" class="pb-12">
-    <h2 class="text-center mb-6">Projetos</h2>
+    <div class="text-center mb-6">
+      <SectionTitle title="Projetos" />
+    </div>
 
     <Swiper
         :modules="[Navigation, Pagination, Autoplay]"
@@ -15,6 +17,7 @@
         disableOnInteraction: false
       }"
         class="project-swiper"
+        :breakpoints="swiperBreakpoints"
     >
       <SwiperSlide
           v-for="(repo, index) in pinned"
@@ -58,6 +61,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import api from "@/services/api";
@@ -81,5 +85,11 @@ const getSlidesPerView = computed(() => {
   if (width >= 768) return 2;
   return 1;
 });
+
+const swiperBreakpoints = {
+  0: { slidesPerView: 1, spaceBetween: 12 },
+  768: { slidesPerView: 2, spaceBetween: 16 },
+  1200: { slidesPerView: 3, spaceBetween: 16 },
+};
 </script>
 

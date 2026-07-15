@@ -1,13 +1,19 @@
 <template>
-  <v-app-bar app color="black" dark flat class="px-6 px-md-12">
-    <v-btn class="text-none" variant="text" @click="handleDrawerClick('home')">
+  <v-app-bar app color="black" dark flat class="px-6 px-md-12 navbar-custom">
+    <v-btn class="text-none brand-btn" variant="text" @click="handleDrawerClick('home')">
       <v-icon color="purple" left class="mr-2">fas fa-signature</v-icon>
       <span class="cpurple">Gabriel Rocha</span>
     </v-btn>
     <v-spacer />
 
     <template v-if="!isCollapsed">
-      <v-btn class="cpurple" v-for="item in items" :key="item.id" text @click="scroll(item.id)">
+      <v-btn
+        v-for="item in items"
+        :key="item.id"
+        class="nav-link"
+        variant="text"
+        @click="scroll(item.id)"
+      >
         {{ item.label }}
       </v-btn>
     </template>
@@ -20,17 +26,18 @@
   </v-app-bar>
 
   <v-navigation-drawer
-      v-model="drawer"
-      app
-      temporary
-      right
+    v-model="drawer"
+    app
+    temporary
+    right
+    class="mobile-nav"
   >
-    <v-list>
+    <v-list density="comfortable">
       <v-list-item
-          v-for="item in items"
-          :key="item.id"
-          @click="handleDrawerClick(item.id)"
-          link
+        v-for="item in items"
+        :key="item.id"
+        @click="handleDrawerClick(item.id)"
+        link
       >
         <v-list-item-title>{{ item.label }}</v-list-item-title>
       </v-list-item>
@@ -40,6 +47,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { scrollToSection } from '@/utils/scroll';
 
 const drawer = ref(false);
 const isCollapsed = ref(false);
@@ -67,19 +75,7 @@ const items = [
 ];
 
 function scroll(refName) {
-  const el = document.getElementById(refName);
-  const navbar = document.querySelector('.v-app-bar');
-  const navbarHeight = navbar ? navbar.offsetHeight : 0;
-
-  if (el) {
-    const elementPosition = el.getBoundingClientRect().top + window.window.scrollY;
-    const offsetPosition = elementPosition - navbarHeight - 10;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-  }
+  scrollToSection(refName);
 }
 
 function handleDrawerClick(refName) {

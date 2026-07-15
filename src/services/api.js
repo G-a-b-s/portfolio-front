@@ -17,6 +17,9 @@ export default {
   getContacts() {
     return api.get('contacts.json').then(res => res.data);
   },
+  getAboutMe() {
+    return api.get('about.json').then(res => res.data);
+  },
   getExperiences() {
     return api.get('experiences.json').then(res => res.data);
   },
