@@ -1,8 +1,7 @@
 <template>
   <v-container>
     <div id="skills" class="text-center mt-4">
-      <h2>Habilidades</h2>
-      <div style="width: 120px; margin: 0 auto; border-bottom: 3px solid #6f42c1;"></div>
+      <SectionTitle title="Habilidades" />
     </div>
     <br/>
     <v-row justify="center" align="stretch">
@@ -40,6 +39,7 @@
 <script setup>
 import { onMounted, ref, computed } from "vue";
 import api from "@/services/api";
+import SectionTitle from '@/components/SectionTitle.vue';
 
 const skills = ref([]);
 

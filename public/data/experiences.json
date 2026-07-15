@@ -12,5 +12,12 @@
     "company": "Reply",
     "duration": "1 ano e 5 meses",
     "description": "Manutenção de aplicações web com .NET, Razor Pages, MVC, JavaScript e SQL Server."
+  },
+  {
+    "id": 3,
+    "position": "Estágio de Desenvolvimento FullStack",
+    "company": "DTI Digital",
+    "duration": "9 meses",
+    "description": "Desenvolvimento fullstack orientado a IA."
   }
 ]

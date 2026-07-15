@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Minha trajetória",
+    "description": "Sou estudante de Sistemas de Informação e, ao longo da minha trajetória, venho construindo experiência em desenvolvimento web, backend e interfaces digitais. Hoje atuo como desenvolvedor fullstack em um contexto orientado a IA, aplicando conceitos AI-Native, Speckit e criação de agentes para construir soluções mais inteligentes e escaláveis."
+  },
+  {
+    "id": 2,
+    "title": "Tecnologias e foco atual",
+    "description": "Atualmente trabalho com .NET, C#, JavaScript e React, com forte interesse em produtos e soluções orientadas a IA. Também tenho vivência anterior com Flutter, o que contribuiu muito para minha visão de interfaces e experiência do usuário."
+  },
+  {
+    "id": 3,
+    "title": "Minha abordagem",
+    "description": "Gosto de construir produtos que unem tecnologia, estratégia e usabilidade. Acredito que boas soluções são aquelas que resolvem problemas reais de forma simples, eficiente e com uma proposta clara para quem vai usar, e estou sempre disposto a evoluir e me adaptar para entregar o melhor resultado."
+  },
+  {
+    "id": 4,
+    "title": "Perspectiva pessoal",
+    "description": "Como pessoa neurodivergente, trago uma forma diferente de pensar, com bastante criatividade, atenção aos detalhes e foco em soluções práticas. Isso me ajuda a encontrar caminhos alternativos e a entregar trabalhos com mais originalidade e propósito."
+  }
+]

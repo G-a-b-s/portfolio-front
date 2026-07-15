@@ -5,14 +5,15 @@
       <HeadView
           @scroll-contact="scrollToContact"
           @scroll-about="scrollToAbout"
+          @scroll-projects="scrollToProjects"
       />
       <AboutView />
       <v-divider></v-divider>
       <v-row>
-        <v-col cols="6" id="education" class="padd">
+        <v-col cols="12" md="6" id="education" class="padd">
           <EducationView />
         </v-col>
-        <v-col cols="6" id="experience" class="padd">
+        <v-col cols="12" md="6" id="experience" class="padd">
           <ExperienceView />
         </v-col>
       </v-row>
@@ -32,6 +33,7 @@ import NavBarView from "../components/NavBarView.vue";
 import FooterView from "../components/FooterView.vue";
 import HeadView from "@/views/HeadView.vue";
 import AboutView from "@/views/AboutView.vue";
+import { scrollToSection } from '@/utils/scroll';
 import ExperienceView from "@/views/ExperienceView.vue";
 import ProjectsView from "@/views/ProjectsView.vue";
 import SkillsView from "@/views/SkillsView.vue";
@@ -39,15 +41,14 @@ import ContactView from "@/views/ContactView.vue";
 import EducationView from "@/views/EducationView.vue";
 
 function scrollToContact() {
-  const el = document.getElementById('contact');
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-  }
+  scrollToSection('contact');
 }
+
 function scrollToAbout() {
-  const el = document.getElementById('about');
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-  }
+  scrollToSection('about');
+}
+
+function scrollToProjects() {
+  scrollToSection('projects');
 }
 </script>
