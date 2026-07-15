@@ -399,10 +399,11 @@ v-footer .v-card,
     object-fit: contain;
 }
 
-.vueIcon {
+.azureIcon {
     top: -20px;
     right: -20px;
-    border-color: #42b883;}
+    border-color: #0078D4;
+}
 
 .jsIcon {
     bottom: -20px;
@@ -410,16 +411,16 @@ v-footer .v-card,
     border-color: #f7df1e;
 }
 
-.javaIcon {
+.githubIcon {
     top: -20px;
     left: -20px;
-    border-color:#007396;
+    border-color:#000000;
 }
 
-.flutterIcon {
+.claudeIcon {
     bottom: -20px;
     right: -20px;
-    border-color:#02569b;
+    border-color:#FF6A00;
 }
 
 .gitIcon {
@@ -428,10 +429,10 @@ v-footer .v-card,
     border-color: #f05032;
 }
 
-.csharpIcon {
+.dotnetIcon {
     top: 40%;
     right: -30%;
-    border-color: #68217a;
+    border-color: #512BD4;
 }
 
 /* Timeline */

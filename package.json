@@ -9,6 +9,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@dev.icons/vue": "^1.1.0",
     "@mdi/font": "5.9.55",
     "ajv": "^8.17.1",
     "axios": "^1.10.0",
