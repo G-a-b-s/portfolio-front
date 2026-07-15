@@ -58,13 +58,22 @@
             </v-expansion-panels>
           </div>
 
-          <v-btn
-              tile
-              class="mt-6 btnResume rounded"
-              @click="downloadResume"
-          >
-            Download CV
-          </v-btn>
+          <div class="d-flex flex-wrap mt-6">
+            <v-btn
+                tile
+                class="btnResume rounded"
+                @click="downloadResume"
+            >
+              Baixar Currículo
+            </v-btn>
+            <v-btn
+                tile
+                class="btnResume rounded ms-3"
+                @click="downloadResumeEn"
+            >
+              Download Resume
+            </v-btn>
+          </div>
         </v-col>
       </v-row>
     </div>
@@ -97,7 +106,16 @@ onMounted(async () => {
 function downloadResume() {
   const link = document.createElement('a')
   link.href = `${baseUrl}resume.pdf`;
-  link.download = 'Gabriel_Rocha_CV.pdf'
+  link.download = 'Gabriel_Rocha_Curriculo.pdf'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
+function downloadResumeEn() {
+  const link = document.createElement('a')
+  link.href = `${baseUrl}resume_en.pdf`;
+  link.download = 'Gabriel_Rocha_Resume.pdf'
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
