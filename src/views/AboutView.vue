@@ -7,59 +7,23 @@
             <v-avatar size="220" class="elevation-12">
               <img :src="baseUrl + 'perfil.jpeg'" alt="Gabriel Rocha" class="photoProfile" loading="lazy" decoding="async" />
             </v-avatar>
-            <div class="orbit-icon vueIcon">
-              <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-                  alt="Vue.js"
-                  class="tech-icon"
-                  loading="lazy"
-                  decoding="async"
-              />
+            <div class="orbit-icon azureIcon">
+              <MicrosoftAzure class="tech-icon" />
             </div>
             <div class="orbit-icon jsIcon">
-              <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                  alt="JavaScript"
-                  class="tech-icon"
-                  loading="lazy"
-                  decoding="async"
-              />
+              <Javascript class="tech-icon" />
             </div>
-            <div class="orbit-icon javaIcon">
-              <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                  alt="Java"
-                  class="tech-icon"
-                  loading="lazy"
-                  decoding="async"
-              />
+            <div class="orbit-icon githubIcon">
+              <GithubIcon class="tech-icon" />
             </div>
-            <div class="orbit-icon flutterIcon">
-              <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
-                  alt="Flutter"
-                  class="tech-icon"
-                  loading="lazy"
-                  decoding="async"
-              />
+            <div class="orbit-icon claudeIcon">
+              <ClaudeCode class="tech-icon" />
             </div>
             <div class="orbit-icon gitIcon">
-              <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                  alt="Git"
-                  class="tech-icon"
-                  loading="lazy"
-                  decoding="async"
-              />
+              <GitIcon class="tech-icon" />
             </div>
-            <div class="orbit-icon csharpIcon">
-              <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                  alt="C#"
-                  class="tech-icon"
-                  loading="lazy"
-                  decoding="async"
-              />
+            <div class="orbit-icon dotnetIcon">
+              <Dotnet class="tech-icon" />
             </div>
           </div>
         </v-col>
@@ -115,6 +79,10 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import api from "@/services/api";
+import { ClaudeCode } from "@dev.icons/vue";
+import { MicrosoftAzure } from "@dev.icons/vue";
+import { GithubIcon } from "@dev.icons/vue";
+import { GitIcon, Dotnet, Javascript } from "@dev.icons/vue";
 
 const baseUrl = process.env.BASE_URL;
 
