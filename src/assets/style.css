@@ -506,7 +506,7 @@ v-footer .v-card,
 
 /*Skills */
 .skill-card {
-    background-color: #f3ebff;
+    background-color: #ffffff;
     border: 1px solid #b3a1f7;
     border-radius: 8px;
     width: 300px;
@@ -546,7 +546,7 @@ v-footer .v-card,
     width: 100%;
     max-width: 280px;
     min-height: 360px;
-    background-color: #f3ebff;
+    background-color: #ffffff;
     padding: 16px;
     display: flex;
     flex-direction: column;

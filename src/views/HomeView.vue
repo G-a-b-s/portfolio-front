@@ -18,7 +18,7 @@
         </v-col>
       </v-row>
       <v-divider></v-divider>
-      <SkillsView class="mb-4"/>
+      <SkillsView class="mt-8 mb-4"/>
       <v-divider></v-divider>
       <ProjectsView class="mt-8 mb-4"/>
       <v-divider></v-divider>
