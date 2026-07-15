@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "type": "Telefone",
+    "value": "31999158769"
+  },
+  {
+    "id": 2,
+    "type": "Email",
+    "value": "gabrielrochaoldev@gmail.com"
+  },
+  {
+    "id": 3,
+    "type": "GitHub",
+    "value": "https://github.com/G-a-b-s"
+  },
+  {
+    "id": 4,
+    "type": "LinkedIn",
+    "value": "https://linkedin.com/in/gabriel-rocha-dev"
+  }
+]
